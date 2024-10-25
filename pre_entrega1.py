@@ -5,7 +5,7 @@ El menú debe permitir al usuario seleccionar entre diferentes opciones relacion
 Entre las opciones, deben incluirse: agregar productos al inventario y mostrar los productos registrados. """
 
 # Inicializacion de la variable
-choose = 0
+choose = "" 
 
 # Menu inicial
 print("\n=============== INVENTARIO ===============")
@@ -15,22 +15,23 @@ print("3. Salir")
 print("==========================================\n")
 
 # Ciclo while se valida que la eleccion del usuario sea distinta de salir (3)
-while choose != 3:
-    choose = int(input("Elija una opcion del menu (1, 2 o 3): "))
+while choose != "3":
+# No se agrega la funcion int al input para no romper el codigo si el usuario usa un caracter.
+    choose = input("Elija una opcion del menu (1, 2 o 3): ")
 # El if verifica que selecciona en el menu el numero 1 y modifica el valor de la variable para salir del ciclo y sistema.
-    if choose == 1:
-        print(f'\nElegiste la opcion {choose} "Agregar prodcutos al inventario"\n')
-        choose +=2
+    if choose == "1":
+        print(f'\nElegiste la opcion: {choose} "Agregar prodcutos al inventario"\n')
+        choose = "3"
 # Elif verifica que selecciona en el menu el numero 2 y modifica el valor de la variable para salir del ciclo y sistema.
-    elif choose == 2:
-        print(f'\nElegiste la opcion {choose} "Mostrar productos registrados"\n')
-        choose +=1
+    elif choose == "2":
+        print(f'\nElegiste la opcion: {choose} "Mostrar productos registrados"\n')
+        choose = "3"
 # Elif verifica que selecciona en el menu el numero 3, dando un mensaje de la salida del ciclo y sistema.
-    elif choose == 3:
-        print(f'\nElegiste opcion {choose} para salir del sistema, hasta luego!\n')
+    elif choose == "3":
+        print(f'\nElegiste opcion: {choose}, para salir del sistema, hasta luego!\n')
 # El else se usa para validar que ingresa un valor correcto y se ofrece nuevamente el menu.
     else:
-        print(f'\nEl numero {choose} no es una opcion correcta, intenta nuevamente!\n')
+        print(f'\nLa opcion "{choose}" no es una eleccion correcta, intenta nuevamente!\n')
         
         print("=============== INVENTARIO ===============")
         print("1. Agregar prodcutos al inventario")
