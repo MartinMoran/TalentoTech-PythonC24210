@@ -7,15 +7,14 @@ Entre las opciones, deben incluirse: agregar productos al inventario y mostrar l
 # Inicializacion de la variable
 choose = "" 
 
-# Menu inicial
-print("\n=============== INVENTARIO ===============")
-print("1. Agregar prodcutos al inventario")
-print("2. Mostrar productos registrados")
-print("3. Salir")
-print("==========================================\n")
-
 # Ciclo while se valida que la eleccion del usuario sea distinta de salir (3)
 while choose != "3":
+# Menu inicial     
+    print("\n=============== INVENTARIO ===============")
+    print("1. Agregar prodcutos al inventario")
+    print("2. Mostrar productos registrados")
+    print("3. Salir")
+    print("==========================================\n")
 # No se agrega la funcion int al input para no romper el codigo si el usuario usa un caracter.
     choose = input("Elija una opcion del menu (1, 2 o 3): ")
 # El if verifica que selecciona en el menu el numero 1 y modifica el valor de la variable para salir del ciclo y sistema.
@@ -32,9 +31,3 @@ while choose != "3":
 # El else se usa para validar que ingresa un valor correcto y se ofrece nuevamente el menu.
     else:
         print(f'\nLa opcion "{choose}" no es una eleccion correcta, intenta nuevamente!\n')
-        
-        print("=============== INVENTARIO ===============")
-        print("1. Agregar prodcutos al inventario")
-        print("2. Mostrar productos registrados")
-        print("3. Salir")
-        print("==========================================\n")
