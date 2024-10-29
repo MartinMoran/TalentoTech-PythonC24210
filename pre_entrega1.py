@@ -20,7 +20,7 @@ prod_qty = 0
 while choose != "3":
 # Menu inicial     
     print("\n=============== INVENTARIO ===============")
-    print("1. Agregar prodcutos al inventario")
+    print("1. Agregar productos al inventario")
     print("2. Mostrar productos registrados")
     print("3. Salir")
     print("==========================================\n")
@@ -28,10 +28,10 @@ while choose != "3":
     choose = input("Elija una opcion del menu (1, 2 o 3): ")
 # El if verifica que seleccionamos en el menu el numero 1.
     if choose == "1":
-        print(f'\nElegiste la opcion {choose} - "Agregar prodcutos al inventario"\n')
+        print(f'\nElegiste la opcion {choose} - "Agregar productos al inventario"\n')
 # Se requiere el nombre de producto y cantidad, se guardan los mismos como un array dentro de la lista.
         prod_name = input("Ingrese el nombre del producto: ")
-        prod_qty = int(input(f"Ingrese la cantidad del prodcuto {prod_name}: "))
+        prod_qty = int(input(f"Ingrese la cantidad del producto {prod_name}: "))
         products.append([prod_name, prod_qty])
 # Elif verifica que seleccionamos en el menu el numero 2 y usamos un while con un contador para recorrer el array.
     elif choose == "2":
