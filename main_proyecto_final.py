@@ -19,22 +19,23 @@ def mostrar_menu():
 
         opcion = input("Elija una opcion del menu: ")
 
-        if opcion == "1":
-            registrar_productos()
-        elif opcion == "2":
-            actualizar_productos()
-        elif opcion == "3":
-            eliminar_productos()
-        elif opcion == "4":
-            mostrar_productos()
-        elif opcion == "5":
-            reporte_bajo_stock()
-        elif opcion == "6":
-            buscar_productos()
-        elif opcion == "7":
-            print(f'\nElegiste la opcion {opcion}, saliendo del sistema, hasta luego!\n')
-        else:
-            print(f'\nLa opcion "{opcion}" no es una eleccion correcta, intenta nuevamente!')
+        match opcion:
+            case "1":
+                registrar_productos()
+            case "2":
+                actualizar_productos()
+            case "3":
+                eliminar_productos()
+            case "4":
+                mostrar_productos()
+            case "5":
+                reporte_bajo_stock()
+            case "6":
+                buscar_productos()
+            case "7":
+                print(f'\nElegiste la opcion {opcion}, saliendo del sistema, hasta luego!\n')
+            case _:
+                print(f'\nLa opcion "{opcion}" no es una eleccion correcta, intenta nuevamente!')
 
 
 def registrar_productos():
