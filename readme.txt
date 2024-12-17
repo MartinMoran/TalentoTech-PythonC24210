@@ -25,3 +25,4 @@ Main, Validaciones y BBDD, para estructurar y ordenar el codigo.
 
 VERSIONES
 Python 3.11.9
+Pip 24.3.1
