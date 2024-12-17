@@ -160,6 +160,7 @@ def reporte_bajo_stock():
             print(Fore.YELLOW+"\nNo se encontraron productos con stock inferior o igual a", limite)
             print("\nVolviendo al menu pricipal...")
         else:
+            print(Fore.YELLOW+"\nLa siguiente lista de productos tiene bajo stock!")
             modulo_titulos.subtitulo_lista_prod()    
             for productos in resultado:
                 print("| ",productos[0],"\t|", productos[1],"\t|", productos[2], "\t   |",
@@ -167,7 +168,7 @@ def reporte_bajo_stock():
             print("\nVolviendo al menu principal...")     
     except ValueError:
         print(Fore.RED+"\nPor favor, ingrese un valor valido para el limite de stock!"+Fore.RESET)
-        
+        print("\nVolviendo al menu pricipal...")
     finally:
         if conn:
             conn.close()
