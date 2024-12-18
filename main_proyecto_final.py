@@ -11,7 +11,7 @@ def mostrar_menu():
     while opcion != "7":   
         modulo_titulos.titulo_menu()
         opcion = input(Fore.YELLOW+"Elija una opcion del menu: ")
-
+        # USO DEL MATCH CASE, PARA UN MEJOR ORDEN
         match opcion:
             case "1":
                 registrar_productos()
@@ -77,12 +77,12 @@ def actualizar_productos():
     # SOLICITAMOS LOS DATOS AL USUARIO CON INPUT Y MODULO VALIDACIONES
     id = modulo_validaciones.solicitar_id()
     cantidad = modulo_validaciones.solicitar_cantidad()
-    
+    # CONEXION A LA BASE DE DATOS Y EJECUCION DE LA PETICION
     conn = sql.connect("inventario.db")
     cursor = conn.cursor()
     cursor.execute(f"UPDATE productos SET cantidad=? WHERE id=?",(cantidad, id))
     conn.commit()
-    
+    # MENSAJE DE CONFIRMACION Y SALIDA
     print(Fore.GREEN+"\nProducto actualizado correctamente!\n"+Fore.RESET)
     print("Volviendo al menu principal...")
     
@@ -90,16 +90,16 @@ def actualizar_productos():
  
 def eliminar_productos():
     while True:
+        # TITULO Y MUESTRA DEL LISTADO
         modulo_titulos.titulo_eliminar_prod()      
         mostrar_productos()
         print("")
-        
+        # CONEXION A LA BASE DE DATOS
         conn = sql.connect("inventario.db")
         cursor = conn.cursor()
-        
+        # REUTILIZAMOS LA VALIDACION DEL ID DESDE EL MODULO
         id = modulo_validaciones.solicitar_id()
         confirmar = input(Fore.YELLOW+"\nEsta seguro de borrar el registro? (s/n): "+Fore.RESET).lower()
-        
         # VALIDAMOS LA ELIMINACION CON UNA SEGUNDA CONSULTA
         if confirmar == "s":
             cursor.execute("DELETE FROM productos WHERE id=?",(id,))
@@ -132,9 +132,11 @@ def eliminar_productos():
         conn.close()           
         
 def mostrar_productos():
-    modulo_titulos.titulo_mostrar_prod()    
+    modulo_titulos.titulo_mostrar_prod()
+    # CONEXION AL SERVIDOR    
     conn = sql.connect("inventario.db")
     cursor = conn.cursor()
+    # EJECUCION DE LA PETICION
     cursor.execute("SELECT * FROM productos")
     resultado = cursor.fetchall()
     modulo_titulos.subtitulo_lista_prod()
@@ -151,11 +153,11 @@ def reporte_bajo_stock():
     try:
         conn = sql.connect("inventario.db")
         cursor = conn.cursor()
-        # SE SOLICITA EL VALOR AL USUARIO PARA EJECUTAR LA QUERY AL SERVIDOR
+        # SE SOLICITA EL VALOR AL USUARIO PARA EJECUTAR LA QUERY AL SERVIDOR.
         limite = modulo_validaciones.solicitar_limite()
         cursor.execute("SELECT * FROM productos WHERE cantidad <= ?", (limite,))
         resultado = cursor.fetchall()
-        
+        # VALIDACION POR SI NO ENCUENTRA PRODUCTOS Y EJECUCION LUEGO DEL LISTADO.
         if not resultado:
             print(Fore.YELLOW+"\nNo se encontraron productos con stock inferior o igual a", limite)
             print("\nVolviendo al menu pricipal...")

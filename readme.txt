@@ -11,39 +11,55 @@ Consignas del PFI:
 3. Además, debe incluir funcionalidades para realizar búsquedas y generar reportes de stock. 
 
 
-# REQUERIMIENTOS:
+# FUNCIONALIDADES:
 
 * Registro de productos: 
-Ingresar nuevos productos al inventario, solicitando nombre, descripción, cantidad disponible, precio y categoría.
-* Consulta de productos: 
-Consultar el inventario y ver la información detallada de cada producto, como stock disponible y precio.
+Ingresar nuevos productos al inventario, solicitando nombre, cantidad, precio unitario, categoría y descripción.
+
 * Actualización de productos: 
-Modificar la cantidad disponible de un producto específico.
+Permite modificar la cantidad disponible de un producto específico por su ID.
+
 * Eliminación de productos: 
-Permitir eliminar productos del inventario.
-* Listado Completo: 
+Facilita la eliminacion de productos del inventario por su ID.
+
+* Mostrar Productos: 
 Generar un listado completo del inventario.
+
 * Reporte de Bajo Stock: 
-Mostrar un reporte de productos con bajo stock. 
+Muestra un reporte de productos con bajo stock solicitando al usuario el valor limite. 
+
+* Buscar productos: 
+Consultar el inventario a traves de la solicitud al usuario del nombre y ver la información completa de los productos.
 
 
-MODULOS
+# MODULOS
+
 Se utlizaron 3 modulos para estructurar y ordenar el codigo: 
+
 - modulo bbdd: funciones relativas a creacion de la BBDD y Tabla.
+
 - modulo titulos: funciones de titulos para presentacion y estilo del proyecto.
+
 - modulo validaciones: funciones de control de validaciones varias.
 
 
 # VERSIONES UTILIZADAS
-Pip 24.3.1
-Python 3.11.9
+
+- Pip 24.3.1
+- Python 3.11.9
+- Sqlite3 3.45.1
+- Colorama 0.4.6
 
 
 # SOBRE EL AUTOR:
+
+- Nombre completo:
 Martin Federico Moran
-Email: 
+
+- Email: 
 martinfmoran81@gmail.com
-Redes:
+
+- Redes:
 https://github.com/MartinMoran
 https://www.linkedin.com/in/martinfmoran/
 
