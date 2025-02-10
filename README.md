@@ -12,7 +12,7 @@ Consignas del PFI:
 3. Además, debe incluir funcionalidades para realizar búsquedas y generar reportes de stock. 
 
 
-# FUNCIONALIDADES:
+# Funcionalidades:
 
 * Registro de productos: 
 Ingresar nuevos productos al inventario, solicitando nombre, cantidad, precio unitario, categoría y descripción.
@@ -33,7 +33,7 @@ Muestra un reporte de productos con bajo stock solicitando al usuario el valor l
 Consultar el inventario a traves de la solicitud al usuario del nombre y ver la información completa de los productos.
 
 
-# MODULOS
+# Modulos
 
 Se utlizaron 3 modulos para estructurar y ordenar el codigo: 
 
@@ -44,7 +44,7 @@ Se utlizaron 3 modulos para estructurar y ordenar el codigo:
 - modulo validaciones: funciones de control de validaciones varias.
 
 
-# VERSIONES UTILIZADAS
+# Versiones Utilizadas
 
 - Pip 24.3.1
 - Python 3.11.9
@@ -52,7 +52,7 @@ Se utlizaron 3 modulos para estructurar y ordenar el codigo:
 - Colorama 0.4.6
 
 
-# SOBRE EL AUTOR:
+# Sobre el autor:
 
 - Nombre completo:
 Martin Federico Moran
